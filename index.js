@@ -31,7 +31,7 @@ var config = {
   allowInsecureHTTP: true,
   "apps": [
     {
-      "serverURL": settings.serverURL,
+      "serverURL": "http://newsloginserver.herokuapp.com/parse",
       "appId": settings.appId,
       "masterKey": settings.masterKey,
       "appName": "TBD"
