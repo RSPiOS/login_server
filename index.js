@@ -12,7 +12,7 @@ if (!databaseUri) {
   console.log('DATABASE_URI not specified, falling back to localhost.');
 }
 
-var settings = 
+var settings = {
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'rspios',
@@ -21,6 +21,7 @@ var settings =
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   }
+};
 
 var api = new ParseServer(settings);
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
