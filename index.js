@@ -27,7 +27,8 @@ var api = new ParseServer(settings);
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
 // javascriptKey, restAPIKey, dotNetKey, clientKey
-var dashboard = new ParseDashboard({
+var config = {
+  allowInsecureHTTP: true,
   "apps": [
     {
       "serverURL": settings.serverURL,
@@ -42,7 +43,8 @@ var dashboard = new ParseDashboard({
       "pass":"1234" // change this to something secure
     }
   ]
-}, { allowInsecureHTTP: false});
+};
+var dashboard = new ParseDashboard(config, config.allowInsecureHTTP);
 
 var app = express();
 
